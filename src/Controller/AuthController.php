@@ -19,14 +19,13 @@ class AuthController extends AbstractController
     /**
      * Обрабатывает вход в систему (логин).
      *
-     * @Route("/login", name="login", methods={"POST"})
-     *
      * @param Request $request HTTP-запрос.
      * @param UserRepository $userRepository Репозиторий пользователей.
      * @param JWTManager $jwtManager Сервис для работы с JWT.
      * @param UserPasswordHasherInterface $passwordHasher Сервис для хэширования паролей.
      * @return JsonResponse JSON-ответ с JWT токеном.
      */
+    #[Route('/login', name: 'login', methods: ['POST'])]
     public function login(
         Request $request,
         UserRepository $userRepository,
